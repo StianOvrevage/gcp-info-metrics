@@ -1,0 +1,11 @@
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: ScrapeConfig
+metadata:
+  name: gcp-info-pd-metrics
+spec:
+  metricsPath: /StianOvrevage/gcp-info-metrics/refs/heads/main/metrics_gcp_info_pd.txt
+  staticConfigs:
+    - labels:
+        job: gcp-info-pd-metrics
+      targets:
+        - raw.githubusercontent.com
