@@ -1,15 +1,19 @@
 # Baseline performance
-gcp_info_pd_baseline_iops_per_instance{pd_type="pd-balanced-zonal-pd"} 3000
-gcp_info_pd_baseline_iops_per_instance{pd_type="pd-ssd-zonal-pd"} 6000
+# > PS: The regional baseline numbers are just assumed since they are not explicitly documented by Google (yet)
 
-# I'm just assuming regional has the same baseline as zonal even though it's not documented
+gcp_info_pd_baseline_iops_per_instance{pd_type="pd-balanced-zonal-pd"} 3000
 gcp_info_pd_baseline_iops_per_instance{pd_type="pd-balanced-regional-pd"} 3000
+
+gcp_info_pd_baseline_iops_per_instance{pd_type="pd-ssd-zonal-pd"} 6000
 gcp_info_pd_baseline_iops_per_instance{pd_type="pd-ssd-regional-pd"} 6000
 
 # 140 MiBps
 gcp_info_pd_baseline_throughput_per_instance_bytes_sec{pd_type="pd-balanced-zonal-pd"} 146800640
+gcp_info_pd_baseline_throughput_per_instance_bytes_sec{pd_type="pd-balanced-regional-pd"} 146800640
+
 # 240 MiBps
 gcp_info_pd_baseline_throughput_per_instance_bytes_sec{pd_type="pd-ssd-zonal-pd"} 251658240
+gcp_info_pd_baseline_throughput_per_instance_bytes_sec{pd_type="pd-ssd-regional-pd"} 251658240
 
 # # Zonal disks
 gcp_info_pd_read_iops_per_gb{pd_type="pd-standard-zonal-pd"} 0.75
