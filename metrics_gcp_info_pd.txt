@@ -88,6 +88,15 @@ gcp_info_pd_write_iops_per_instance_max{pd_type="pd-ssd-regional-pd"} 80000
 gcp_info_pd_write_iops_per_instance_max{pd_type="pd-balanced-regional-pd", machine_type="n2d"} 50000
 gcp_info_pd_write_iops_per_instance_max{pd_type="pd-ssd-regional-pd", machine_type="n2d"} 60000
 
+# 0.12 MiBps
+gcp_info_pd_throughput_per_gb_bytes_sec{pd_type="pd-standard-regional-pd"} 125829
+# 0.28 MiBps
+gcp_info_pd_throughput_per_gb_bytes_sec{pd_type="pd-balanced-regional-pd"} 293601
+# 0.48 MiBps
+gcp_info_pd_throughput_per_gb_bytes_sec{pd_type="pd-ssd-regional-pd"} 503316
+# 0.48 MiBps
+gcp_info_pd_throughput_per_gb_bytes_sec{pd_type="pd-ssd-regional-pd-multiwriter"} 503316
+
 # 1200 MiBps
 gcp_info_pd_read_throughput_per_instance_bytes_sec_max{pd_type="pd-standard-regional-pd"} 1258291200
 gcp_info_pd_read_throughput_per_instance_bytes_sec_max{pd_type="pd-balanced-regional-pd"} 1258291200
