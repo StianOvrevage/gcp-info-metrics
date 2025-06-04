@@ -113,6 +113,8 @@ gcp_info_pd_write_throughput_per_instance_bytes_sec_max{pd_type="pd-ssd-regional
 
 # TODO: Add max numbers per machine type as per https://cloud.google.com/compute/docs/disks/performance#machine-type-disk-limits
 
+# Disk pricing (selected few) from https://cloud.google.com/compute/disks-image-pricing?hl=en#tg1-t0
+
 gcp_price_info{service="persistent_disk", location="europe-north1", pd_type="pd-standard-zonal-pd", unit="gibi", period="month", currency="USD"}  0.044
 gcp_price_info{service="persistent_disk", location="europe-north1", pd_type="pd-balanced-zonal-pd", unit="gibi", period="month", currency="USD"}  0.11
 gcp_price_info{service="persistent_disk", location="europe-north1", pd_type="pd-ssd-zonal-pd", unit="gibi", period="month", currency="USD"} 0.187

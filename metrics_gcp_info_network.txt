@@ -1,0 +1,49 @@
+
+# PS: Egress to other regions (within the same VPC) is also subject to additional limits: https://cloud.google.com/compute/docs/network-bandwidth#vm-out-dest-i
+
+# VPC-External Egress limits (https://cloud.google.com/compute/docs/network-bandwidth#vm-out-dest-e)
+# PS: Does not apply to H3 instance type
+# PS2: Limits per physical NIC for instance types with multiple physical (not virtual!) NICs
+# # 7 Gbps
+gcp_info_network_egress_vpc_bytes{tier_1="false"} 875000000
+# # 25 Gbps
+gcp_info_network_egress_vpc_bytes{tier_1="true"} 3125000000
+# # 3 Gbps
+gcp_info_network_egress_vpc_per_flow_bytes 375000000
+
+# VPC-External Ingress limits (https://cloud.google.com/compute/docs/network-bandwidth#vm-in-dest-e)
+gcp_info_network_ingress_vpc_bytes 3750000000
+gcp_info_network_ingress_vpc_packets 1800000
+
+# N2D - https://cloud.google.com/compute/docs/networking/configure-vm-with-high-bandwidth-configuration#n2d-vms
+
+# # Regular network
+
+# # # 10 Gbps
+gcp_info_network_egress_max_per_instance_bytes{family="n2d", tier_1="false", cpu="2"} 1250000000
+gcp_info_network_egress_max_per_instance_bytes{family="n2d", tier_1="false", cpu="4"} 1250000000
+
+# # # 16 Gbps
+gcp_info_network_egress_max_per_instance_bytes{family="n2d", tier_1="false", cpu="8"} 2000000000
+
+# # # 32 Gbps
+gcp_info_network_egress_max_per_instance_bytes{family="n2d", tier_1="false", cpu="16"} 4000000000
+gcp_info_network_egress_max_per_instance_bytes{family="n2d", tier_1="false", cpu="32"} 4000000000
+gcp_info_network_egress_max_per_instance_bytes{family="n2d", tier_1="false", cpu="48"} 4000000000
+gcp_info_network_egress_max_per_instance_bytes{family="n2d", tier_1="false", cpu="64"} 4000000000
+gcp_info_network_egress_max_per_instance_bytes{family="n2d", tier_1="false", cpu="80"} 4000000000
+gcp_info_network_egress_max_per_instance_bytes{family="n2d", tier_1="false", cpu="96"} 4000000000
+gcp_info_network_egress_max_per_instance_bytes{family="n2d", tier_1="false", cpu="128"} 4000000000
+gcp_info_network_egress_max_per_instance_bytes{family="n2d", tier_1="false", cpu="224"} 4000000000
+
+# # Tier 1 network
+
+# # # 50 Gbps
+gcp_info_network_egress_max_per_instance_bytes{family="n2d", tier_1="true", cpu="48"} 6250000000
+gcp_info_network_egress_max_per_instance_bytes{family="n2d", tier_1="true", cpu="64"} 6250000000
+gcp_info_network_egress_max_per_instance_bytes{family="n2d", tier_1="true", cpu="80"} 6250000000
+
+# # # 100 Gbps
+gcp_info_network_egress_max_per_instance_bytes{family="n2d", tier_1="true", cpu="96"} 12500000000
+gcp_info_network_egress_max_per_instance_bytes{family="n2d", tier_1="true", cpu="128"} 12500000000
+gcp_info_network_egress_max_per_instance_bytes{family="n2d", tier_1="true", cpu="224"} 12500000000
