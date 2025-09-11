@@ -1,0 +1,25 @@
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: ScrapeConfig
+metadata:
+  name: gcp-info-pd-metrics
+spec:
+  metricsPath: /signicat/gcp-info-metrics/refs/heads/main/metrics_gcp_info_pd.txt
+  scrapeInterval: 60s
+  staticConfigs:
+    - labels:
+        job: gcp-info-pd-metrics
+      targets:
+        - raw.githubusercontent.com
+---
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: ScrapeConfig
+metadata:
+  name: gcp-info-network-metrics
+spec:
+  metricsPath: /signicat/gcp-info-metrics/refs/heads/main/metrics_gcp_info_network.txt
+  scrapeInterval: 60s
+  staticConfigs:
+    - labels:
+        job: gcp-info-network-metrics
+      targets:
+        - raw.githubusercontent.com

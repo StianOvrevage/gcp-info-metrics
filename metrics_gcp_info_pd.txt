@@ -1,0 +1,106 @@
+# Sources:
+# - https://cloud.google.com/compute/docs/disks/performance
+
+# Baseline performance
+gcp_info_pd_baseline_iops_per_instance{type="pd-standard"} 0
+gcp_info_pd_baseline_iops_per_instance{type="pd-balanced"} 3000
+gcp_info_pd_baseline_iops_per_instance{type="pd-ssd"} 6000
+
+# 0 MiBps
+gcp_info_pd_baseline_throughput_per_instance_bytes_sec{type="pd-standard"} 0
+
+# 140 MiBps
+gcp_info_pd_baseline_throughput_per_instance_bytes_sec{type="pd-balanced"} 146800640
+
+# 240 MiBps
+gcp_info_pd_baseline_throughput_per_instance_bytes_sec{type="pd-ssd"} 251658240
+
+# Allotments per GB
+gcp_info_pd_read_iops_per_gb{type="pd-standard"} 0.75
+gcp_info_pd_write_iops_per_gb{type="pd-standard"} 1.5
+gcp_info_pd_read_iops_per_gb{type="pd-balanced"} 6
+gcp_info_pd_write_iops_per_gb{type="pd-balanced"} 6
+gcp_info_pd_read_iops_per_gb{type="pd-ssd"} 30
+gcp_info_pd_write_iops_per_gb{type="pd-ssd"} 30
+
+# 0.12 MiBps
+gcp_info_pd_throughput_per_gb_bytes_sec{type="pd-standard"} 125829
+# 0.28 MiBps
+gcp_info_pd_throughput_per_gb_bytes_sec{type="pd-balanced"} 293601
+# 0.48 MiBps
+gcp_info_pd_throughput_per_gb_bytes_sec{type="pd-ssd"} 503316
+
+
+# # Zonal disks
+gcp_info_pd_read_iops_per_instance_max{type="pd-standard", replication_type="zonal-pd"} 7500
+gcp_info_pd_read_iops_per_instance_max{type="pd-balanced", replication_type="zonal-pd"} 80000
+gcp_info_pd_read_iops_per_instance_max{type="pd-ssd", replication_type="zonal-pd""} 100000
+gcp_info_pd_read_iops_per_instance_max{type="pd-extreme", replication_type="zonal-pd"} 120000
+gcp_info_pd_read_iops_per_instance_max{type="pd-ssd", replication_type="zonal-pd-multiwriter"} 100000
+
+gcp_info_pd_write_iops_per_instance_max{type="pd-standard", replication_type="zonal-pd"} 15000
+gcp_info_pd_write_iops_per_instance_max{type="pd-balanced", replication_type="zonal-pd"} 80000
+gcp_info_pd_write_iops_per_instance_max{type="pd-ssd", replication_type="zonal-pd"} 100000
+gcp_info_pd_write_iops_per_instance_max{type="pd-extreme", replication_type="zonal-pd"} 120000
+gcp_info_pd_write_iops_per_instance_max{type="pd-ssd", replication_type="zonal-pd-multiwriter"} 100000
+
+# 1200 MiBps
+gcp_info_pd_read_throughput_per_instance_bytes_sec_max{type="pd-standard", replication_type="zonal-pd"} 1258291200
+# 1200 MiBps
+gcp_info_pd_read_throughput_per_instance_bytes_sec_max{type="pd-balanced", replication_type="zonal-pd"} 1258291200
+# 1200 MiBps
+gcp_info_pd_read_throughput_per_instance_bytes_sec_max{type="pd-ssd", replication_type="zonal-pd"} 1258291200
+# 4000 MiBps
+gcp_info_pd_read_throughput_per_instance_bytes_sec_max{type="pd-extreme", replication_type="zonal-pd"} 4194304000
+# 1200 MiBps
+gcp_info_pd_read_throughput_per_instance_bytes_sec_max{type="pd-ssd", replication_type="zonal-pd-multiwriter"} 1258291200
+
+# 400 MiBps
+gcp_info_pd_write_throughput_per_instance_bytes_sec_max{type="pd-standard", replication_type="zonal-pd"} 419430400
+# 1200 MiBps
+gcp_info_pd_write_throughput_per_instance_bytes_sec_max{type="pd-balanced", replication_type="zonal-pd"} 1258291200
+# 1200 MiBps
+gcp_info_pd_write_throughput_per_instance_bytes_sec_max{type="pd-ssd", replication_type="zonal-pd"} 1258291200
+# 3000 MiBps
+gcp_info_pd_write_throughput_per_instance_bytes_sec_max{type="pd-extreme", replication_type="zonal-pd"} 3145728000
+# 1200 MiBps
+gcp_info_pd_write_throughput_per_instance_bytes_sec_max{type="pd-ssd", replication_type="zonal-pd-multiwriter"} 1258291200
+
+# # Regional disks
+gcp_info_pd_read_iops_per_instance_max{type="pd-standard", replication_type="regional-pd"} 7500
+gcp_info_pd_read_iops_per_instance_max{type="pd-balanced", replication_type="regional-pd"} 80000
+gcp_info_pd_read_iops_per_instance_max{type="pd-balanced", replication_type="regional-pd", machine_type="n2d"} 60000
+gcp_info_pd_read_iops_per_instance_max{type="pd-ssd", replication_type="regional-pd"} 100000
+gcp_info_pd_read_iops_per_instance_max{type="pd-ssd", replication_type="regional-pd", machine_type="n2d"} 70000
+
+gcp_info_pd_write_iops_per_instance_max{type="pd-standard", replication_type="regional-pd"} 15000
+gcp_info_pd_write_iops_per_instance_max{type="pd-balanced", replication_type="regional-pd"} 60000
+gcp_info_pd_write_iops_per_instance_max{type="pd-balanced", replication_type="regional-pd", machine_type="n2d"} 50000
+gcp_info_pd_write_iops_per_instance_max{type="pd-ssd", replication_type="regional-pd"} 80000
+gcp_info_pd_write_iops_per_instance_max{type="pd-ssd", replication_type="regional-pd", machine_type="n2d"} 60000
+
+# 1200 MiBps
+gcp_info_pd_read_throughput_per_instance_bytes_sec_max{type="pd-standard", replication_type="regional-pd""} 1258291200
+gcp_info_pd_read_throughput_per_instance_bytes_sec_max{type="pd-balanced", replication_type="regional-pd"} 1258291200
+gcp_info_pd_read_throughput_per_instance_bytes_sec_max{type="pd-ssd", replication_type="regional-pd"} 1258291200
+
+# 200 MiBps
+gcp_info_pd_write_throughput_per_instance_bytes_sec_max{type="pd-standard", replication_type="regional-pd"} 209715200
+# 600 MiBps
+gcp_info_pd_write_throughput_per_instance_bytes_sec_max{type="pd-balanced", replication_type="regional-pd"} 629145600
+# 1000 MiBps
+gcp_info_pd_write_throughput_per_instance_bytes_sec_max{type="pd-ssd", replication_type="regional-pd"} 1048576000
+# 600 MiBps
+gcp_info_pd_write_throughput_per_instance_bytes_sec_max{type="pd-ssd", replication_type="regional-pd", machine_type="n2d"} 629145600
+
+# TODO: Add max numbers per machine type as per https://cloud.google.com/compute/docs/disks/performance#machine-type-disk-limits
+
+# # Disk pricing (selected few) from https://cloud.google.com/compute/disks-image-pricing?hl=en#tg1-t0
+
+gcp_price_info{service="persistent_disk", location="europe-north1", type="pd-standard", replication_type="zonal-pd", unit="gibi", period="month", currency="USD"}  0.044
+gcp_price_info{service="persistent_disk", location="europe-north1", type="pd-balanced", replication_type="zonal-pd", unit="gibi", period="month", currency="USD"}  0.11
+gcp_price_info{service="persistent_disk", location="europe-north1", type="pd-ssd", replication_type="zonal-pd", unit="gibi", period="month", currency="USD"} 0.187
+
+gcp_price_info{service="persistent_disk", location="europe-north1", type="pd-standard", replication_type="regional-pd", unit="gibi", period="month", currency="USD"} 0.088
+gcp_price_info{service="persistent_disk", location="europe-north1", type="pd-balanced", replication_type="regional-pd"", unit="gibi", period="month", currency="USD"} 0.22
+gcp_price_info{service="persistent_disk", location="europe-north1", type="pd-ssd", replication_type="regional-pd", unit="gibi", period="month", currency="USD"} 0.374
